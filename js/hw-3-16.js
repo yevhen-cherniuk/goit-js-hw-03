@@ -1,17 +1,15 @@
 function countTotalSalary(salaries) {
   let totalSalary = 0;
-  // Пиши код ниже этой строки
-  const values = [];
-  for (const key of values){
-    if (salaries.hasOwnProperty(key)){
-  
-        values.concat(Object.values(salaries));
-     
-    }
-  }
-for (let i = 0 ; i < values.length; i += 1){
-totalSalary += values[i];
+ 
+     const values = Object.values(salaries);
+     console.log(values);
+   
+  for (const value of values){
+totalSalary += value;
 }
-  // Пиши код выше этой строки
+  
   return totalSalary;
 }
+console.log(countTotalSalary({}));
+console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+ console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
