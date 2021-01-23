@@ -22,13 +22,17 @@ const atTheOldToad = {
   getPotions() {
     return this.potions;
   },
-  addPotion(potionName) {
-    if (this.potions.includes(potionName)) {
-      return `Зелье ${potionName} уже есть в инвентаре!`;
-    }
+//     addPotion(newPotion) {
+//         for (const potion of this.potions) {
+//           if (this.potions.name === newPotion.name) {
+//       return `Зелье ${newPotion} уже есть в инвентаре!`;
+//     }
+//            this.potions.push(newPotion);
+//       }
+    
 
-    this.potions.push(potionName);
-  },
+   
+//   },
   removePotion(potionName) {
     const potionIndex = this.potions.indexOf(potionName);
 
