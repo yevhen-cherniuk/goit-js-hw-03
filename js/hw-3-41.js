@@ -22,37 +22,37 @@ const atTheOldToad = {
   getPotions() {
     return this.potions;
   },
-//     addPotion(newPotion) {
-//         for (const potion of this.potions) {
-//           if (this.potions.name === newPotion.name) {
-//       return `Зелье ${newPotion} уже есть в инвентаре!`;
-//     }
-//            this.potions.push(newPotion);
-//       }
-    
+  addPotion(newPotion) {
+    for (let i = 0; i < this.potions.length; i += 1) {
+      if (newPotion.name !== this.potions[i].name) { 
+        return `Зелье ${newPotion} уже есть в инвентаре!`;
+        break;
+      }
+      return this.potions.push(newPotion);
+    }
+
 
    
-//   },
-  removePotion(potionName) {
-    const potionIndex = this.potions.indexOf(potionName);
-
-    if (potionIndex === -1) {
-      return `Зелья ${potionName} нет в инвентаре!`;
-    }
-
-    this.potions.splice(potionIndex, 1);
   },
+  removePotion(potionName) {
+    for (let i = 0; i < this.potions.length; i += 1){
+      if (potionName === this.potions[i].name) {
+        this.potions.splice(i, 1);
+      }
+          }
+    return this.potions;
+      },
   updatePotionName(oldName, newName) {
-    const potionIndex = this.potions.indexOf(oldName);
-
-    if (potionIndex === -1) {
-      return `Зелья ${oldName} нет в инвентаре!`;
+    for (let i = 0; i < this.potions.length; i += 1) {
+      if ((oldName === this.potions[i].name)) {
+        this.potions[i].name = newName;
+      }
+      break;
     }
-
-    this.potions.splice(potionIndex, 1, newName);
+    return this.potions;
   },
   // Пиши код выше этой строки
-};
+  };
 
 console.log(atTheOldToad.getPotions());
 console.log(atTheOldToad.addPotion({ name: 'Невидимка', price: 620 }));
